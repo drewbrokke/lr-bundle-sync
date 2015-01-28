@@ -12,6 +12,8 @@ var docrootHome = path.join(liferayHome, 'portal-web', 'docroot');
 var rootHome = path.join(bundleHome, 'tomcat-7.0.42', 'webapps', 'ROOT');
 
 function startGulpWatch(src, dest) {
+	console.log(chalk.bgBlack.gray('Starting watcher...'));
+
 	gulp.watch(path.join(src,'**/*.*'), function(event) {
 		var filePath = path.dirname(event.path).replace(src, dest);
 
