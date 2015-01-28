@@ -12,7 +12,7 @@ var docrootHome = path.join(liferayHome, 'portal-web', 'docroot');
 var rootHome = path.join(bundleHome, 'tomcat-7.0.42', 'webapps', 'ROOT');
 
 function startGulpWatch(src, dest) {
-	console.log(chalk.bgBlack.gray('Listening for changes to') + chalk.bgBlack(' \"docroot\".'));
+	console.log(chalk.bgBlack.gray('Listening for changes to') + chalk.bgBlack(' \"docroot\".\n'));
 
 	gulp.watch(path.join(src,'**/*.*'), function(event) {
 		var filePath = path.dirname(event.path).replace(src, dest);
@@ -20,7 +20,14 @@ function startGulpWatch(src, dest) {
 		gulp.src(event.path)
 			.pipe(gulp.dest(filePath));
 
-		console.log(chalk.green('Updated file: '), event.path.replace(src, dest));
+		var date = new Date();
+		var time = [
+			date.getHours(),
+			date.getMinutes(),
+			date.getSeconds(),
+		].join(':');
+
+		console.log(chalk.yellow(time) + ' - ' +  chalk.green('Updated file: ') + event.path.replace(src, ''));
 	});
 }
 
