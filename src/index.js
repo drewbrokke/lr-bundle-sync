@@ -3,6 +3,7 @@ var path = require('path');
 var chalk = require('chalk');
 var S = require('string');
 var fs = require('fs-extra');
+require('date-format-lite');
 
 var config = fs.readJsonSync('conf/config.json');
 var liferayHome = config.liferayHome;
@@ -20,12 +21,8 @@ function startGulpWatch(src, dest) {
 		gulp.src(event.path)
 			.pipe(gulp.dest(filePath));
 
-		var date = new Date();
-		var time = [
-			date.getHours(),
-			date.getMinutes(),
-			date.getSeconds(),
-		].join(':');
+		var now = new Date();
+		var time = now.format("hh:mm:ss")
 
 		console.log(chalk.yellow(time) + ' - ' +  chalk.green('Updated file: ') + event.path.replace(src, ''));
 	});
