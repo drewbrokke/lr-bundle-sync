@@ -2,7 +2,6 @@ var fs = require('fs-extra');
 var inquirer = require("inquirer");
 var chalk = require('chalk');
 
-
 var config = fs.readJsonSync('conf/config.json');
 
 function validatePath(filePath) {

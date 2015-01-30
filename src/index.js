@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
 var chalk = require('chalk');
-var S = require('string');
 var fs = require('fs-extra');
 require('date-format-lite');
 

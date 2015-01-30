@@ -1,26 +1,27 @@
 {
-  "name": "sync-liferay",
-  "version": "0.0.0",
-  "description": "Keeps your portal-web source code and webapps ROOT folder in sync.  Kind of a poor-man's fast-deploy setup.",
-  "main": "index.js",
-  "repository": {
+  "name" : "sync-liferay",
+  "version" : "0.0.0",
+  "description" : "Keeps your portal-web source code and webapps ROOT folder in sync.  Kind of a poor-man's fast-deploy setup.",
+  "main" : "index.js",
+  "repository" : {
     "type" : "git",
     "url" : "https://github.com/drewbrokke/lr-bundle-sync"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "config": "node src/config.js"
+  "scripts" : {
+    "test" : "echo \"Error: no test specified\" && exit 1",
+    "start" : "node src/index.js",
+    "config" : "node src/config.js"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "^0.5.1",
-    "cli-input": "^0.1.8",
-    "fs-extra": "^0.15.0",
-    "gulp": "^3.8.10",
-    "inquirer": "^0.8.0",
-    "prompt": "^0.2.14",
-    "string": "^3.0.0"
+  "author" : "",
+  "license" : "ISC",
+  "dependencies" : {
+    "chalk" : "^0.5.1",
+    "cli-input" : "^0.1.8",
+    "date-format-lite" : "^0.6.0",
+    "fs-extra" : "^0.15.0",
+    "gulp" : "^3.8.10",
+    "inquirer" : "^0.8.0",
+    "prompt" : "^0.2.14",
+    "string" : "^3.0.0"
   }
 }
