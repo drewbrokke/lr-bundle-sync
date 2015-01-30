@@ -30,14 +30,18 @@ function startGulpWatch(src, dest) {
 	console.log(chalk.bgBlack.gray('Listening for changes to') + chalk.bgBlack(' \"docroot\".') + '\n');
 }
 
+function printError(error) {
+	console.log(chalk.red(error));
+}
+
 if (!liferayHome.length || !bundleHome.length) {
-	console.log(chalk.red('Please run \"npm run config\" to configure your source and bundle paths'));
+	printError('Please run \"npm run config\" to configure your source and bundle paths');
 }
 else if (fs.existsSync(docrootHome) && fs.existsSync(rootHome)) {
 	startGulpWatch(docrootHome, rootHome);
 }
 else {
-	console.log(chalk.red('Make sure \"liferayHome\" is pointed to your Liferay source directory.'));
-	console.log(chalk.red('Make sure \"bundleHome\" is pointed to the top-level bundle directory.'));
+	printError('Make sure \"liferayHome\" is pointed to your Liferay source directory.');
+	printError('Make sure \"bundleHome\" is pointed to the top-level bundle directory.');
 }
 
